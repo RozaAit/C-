@@ -6,13 +6,12 @@
 
 Console.WriteLine("Введите трехзначное число");
 int number = Convert.ToInt32(Console.ReadLine());
-if (number<1000 || number>100)
+if (number<1000 && number>99)
 {
-int lastDigit = number / 10;
-int firstDigit = lastDigit % 10;
-Console.WriteLine(firstDigit);
+int numA = (number / 10) % 10;
+Console.WriteLine(numA);
 }
-if (number>1000 || number <100)
+else 
 {
     Console.WriteLine("Введено не трехзначное число");
 }
