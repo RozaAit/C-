@@ -1,20 +1,21 @@
-﻿//Задача 8: Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N.
+﻿// Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
+// 3, 5 -> 243 (3⁵)
+// 2, 4 -> 16
 
-Console.WriteLine("Введите число");
-int numberA = Convert.ToInt32(Console.ReadLine());
-
-int i = 1;
-
-while (i < numberA)
+int numberA = ReadInt("Введите число: ");
+int numberB = ReadInt("Введите степень: ");
+ToDegree(numberA, numberB);
+void ToDegree(int a, int b)
 {
-    if (i % 2 != 1)
+    int result = 1;
+    for (int i = 1; i <= b; i++)
     {
-        Console.Write(i + ", ");
+        result = result * a;
     }
-    i++;
+    Console.WriteLine(a + " в степени " + b + " = " + result);
 }
-if (i <= 1)
+int ReadInt(string message)
 {
-    Console.WriteLine("нет четных чисел");
+    Console.WriteLine(message);
+    return Convert.ToInt32(Console.ReadLine());
 }
-
